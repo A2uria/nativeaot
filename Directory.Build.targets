@@ -1,0 +1,19 @@
+<Project>
+  <Target Name="AfterSetupOSSpecificProps" AfterTargets="SetupOSSpecificProps" Condition="'$(_targetOS)' == 'win'">
+    <PropertyGroup>
+      <CppLinker>lld-link</CppLinker>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(OutputType)' == 'WinExe' or '$(OutputType)' == 'Exe'">
+      <LinkerArg Remove="/ENTRY:$(EntryPointSymbol) /NOEXP /NOIMPLIB" />
+      <LinkerArg Include="/ENTRY:$(EntryPointSymbol) /NOIMPLIB" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <LinkerArg Include="/Brepro" />
+      <LinkerArg Include="/MERGE:.managedcode=.text" />
+      <LinkerArg Include="/MERGE:_RDATA=.rdata" />
+      <LinkerArg Include="/MERGE:hydrated=.data" />
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <DebugType>none</DebugType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Win32Resource>$(MSBuildThisFileDirectory)null.res</Win32Resource>
+    <PublishSelfContained>false</PublishSelfContained>
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <!-- <DebuggerSupport>false</DebuggerSupport> -->
+    <!-- <StackTraceSupport>false</StackTraceSupport> -->
+    <!-- <IlcDisableReflection>true</IlcDisableReflection> -->
+    <OptimizationPreference>Speed</OptimizationPreference>
+  </PropertyGroup>
+</Project>
